@@ -56,12 +56,12 @@ int main()
 	cout<<"Min: "<<min<<"m "<<"Max: "<<max<<"m "<<"Sum: "<<sum<<"m"<<endl;
 	cout<<"The values:"<<endl;
 	for(auto m : values)
-		cout<<m<<endl;
+		cout<<m<<"m"<<endl;
 	cout<<"\n";
 	sort(values);
 	cout<<"The sorted vector:"<<endl;
 	for(auto m : values)
 		cout<<m<<'m'<<endl;
 
-		
+return 0;		
 }
