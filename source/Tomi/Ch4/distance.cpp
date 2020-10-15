@@ -27,15 +27,20 @@ int main()
 	bool igaz=true;
 	char u='0';
 	vector<double> values;
-	int m_to_cm=100;
-	int ft_to_in=12;
-	double in_to_cm=2.54;
-	int sum=0;
+	const double cm_to_m=100;
+	const double ft_to_in=12;
+	const double in_to_cm=2.54;
+	double sum=0;
+	const double m=x/1;;
 	while(cin>>x>>u){
 		cout<<x<<' '<<u;
-		if(u=='c') x=x/100;
-		if(u=='i') x=x*2.54/100;
-		if(u=='f') x=x*12*2.54/100;	
+		if(u=='m') x=x/1;
+		else if(u=='c') x=x/cm_to_m;
+		else if(u=='i') x=x*in_to_cm/cm_to_m;
+		else if(u=='f') x=x*ft_to_in*in_to_cm/cm_to_m;
+		else cout<<" Érvénytelen mértékegység"<<endl;	
+		
+		if(u=='c' || u=='m' || u=='i' || u=='f'){
 		cout<<"(= "<<x<<" m)"<<endl;
 		if(igaz){
 			igaz=false;
@@ -52,6 +57,7 @@ int main()
 		}
 		values.push_back(x);
 		sum+=x;
+	}
 	}
 	cout<<"Min: "<<min<<"m "<<"Max: "<<max<<"m "<<"Sum: "<<sum<<"m"<<endl;
 	cout<<"The values:"<<endl;
